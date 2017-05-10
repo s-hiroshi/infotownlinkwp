@@ -16,7 +16,6 @@ class WordPressRepositoryTest extends EccubeTestCase
     }
 
     /**
-     * @group local
      * @test
      */
     public function getEntityでidが1のレコードを取得できるテスト()
@@ -36,7 +35,6 @@ class WordPressRepositoryTest extends EccubeTestCase
     }
 
     /**
-     * @group local
      * @test
      */
     public function レコードが空でないときエンティティのidは必ず1となるテスト()
