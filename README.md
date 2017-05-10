@@ -1,4 +1,4 @@
-# InfoTownLinkWp
+# InfoTownLinkWp 製品マニュアル
 
 WordPressの投稿内容をEC-CUBE3の商品登録ページへ表示するプラグインです。
 
@@ -6,13 +6,11 @@ WordPressの投稿内容をEC-CUBE3の商品登録ページへ表示するプラ
 
 プラグインをインストールするとコンテンツ管理へ「LinkWp 投稿表示タグ」メニューが追加されます。  
 「LinkWp 投稿表示タグ」画面でWordPressの投稿を表示するためのタグを発行します。  
-発行されたタグを商品登録画面のフリーエリアへ貼付けることで商品ページへWordPressの投稿を表示します。 
-
-取得形式は「内容」と「リンク」を選択できます。
+発行したタグを商品登録画面のフリーエリアへ貼付けることでWordPressの投稿を表示します。 
 
 ## プラグイン設定
 
-下記2項目を設定してください。
+2つの項目を設定してください。
 
 * WordPress サイトアドレス(URL)
 * WP APIパス(デフォルト wp-json)  
@@ -26,7 +24,6 @@ WordPressの投稿内容をEC-CUBE3の商品登録ページへ表示するプラ
 * MySQL  
   EC-CUBE3のインストール要件に準じます。
 
-
 ## 追加テーブル
 
 plg_infotown_linkwp_wordpress  
@@ -36,9 +33,7 @@ WordPressの基本設定情報を管理します。
 
 表示のマークアップは下記のようになります。
 
-
 ### 内容(contents)
-
 
 	<div class="linkwp">
 		<div class="linkwp-contents">
@@ -57,7 +52,6 @@ WordPressの基本設定情報を管理します。
 		</div><!-- .linkwp-contents -->
 	</div>
 
-
 ### リンク(links)
 
 	<div class="linkwp">
@@ -69,7 +63,6 @@ WordPressの基本設定情報を管理します。
 		  <a href="http://www.example.com/?p=n">サンプル記事N</a>
 	  </span>
 	</div>
-
 
 ## アンインストール時の注意
 
@@ -91,8 +84,36 @@ WordPressの基本設定情報を管理します。
 * 投稿表示タグ画面のモバイル端末での見た目を改善しました。
 * 設定画面でユーザーメッセージを改善しました。
 
-## 今後の機能追加予定(変更)
 
-本プラグインでEC-CUBEからWordPressへ新規投稿、編集、削除などを行えるように予定していましたが、
-別プラグインとしてリリース予定です。
+# InfoTownLinkWp 開発マニュアル
+
+## ローカル環境
+
+* テスト実行
+* ドキュメンテーション作成
+* ビルド  
+  bin/buildディレクトリに申請用ファイルinfotownlinkwp.tar.gzを作成します。
+
+### 開発環境構築
+
+タスクランナーは[Grunt](https://gruntjs.com/)を使用します。  
+テストは[PHPUnit](https://phpunit.de/)を使用します。  
+ドキュメンテーションは[phpDocumentor](https://www.phpdoc.org/)を使用します。
+
+	$ /path/to/bin
+	$ grunt install
+
+	//テスト実行
+	$ grunt tests
+	// ドキュメンテーション作成
+	$ grunt docs
+	// ビルド bin/buildディレクトリへintowonlinkwp.tar.gz作成
+	$ grunt build
+
+## サーバー環境(Travis CI)
+
+Travis CIで各種環境のテストを行います。  
+詳細は公式の開発ドキュメントに記載されています。
+
+[CIを利用したプラグインのテスト | EC-CUBE 開発ドキュメント](http://doc.ec-cube.net/plugin_test)
 
