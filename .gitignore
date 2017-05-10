@@ -1,0 +1,5 @@
+# Add direcotry for InfoTownLinkWp.
+/bin/node_modules
+/bin/docs
+/bin/build
+.DS_Store
