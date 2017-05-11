@@ -22,10 +22,10 @@
  */
 namespace Plugin\InfoTownLinkWp\Tests\Web;
 
-use Eccube\Tests\EccubeTestCase;
+use Eccube\Tests\Web\Admin\AbstractAdminWebTestCase;
 use Plugin\InfoTownLinkWp\ServiceProvider\ServiceProvider;
 
-class ConfigControllerTest extends EccubeTestCase 
+class ConfigControllerTest extends AbstractAdminWebTestCase
 {
     public function setUp()
     {
@@ -35,22 +35,20 @@ class ConfigControllerTest extends EccubeTestCase
     }
 
     /**
-     * @group local
      * @test
      */
     public function 投稿取得タグ発行画面が表示されること()
     {
-//        $this->client->request('GET', $this->app['config']['admin_route'].'/content/infotownlinkwp');
-//        $this->assertTrue($this->client->getResponse()->isSuccessful());
+        $this->client->request('GET', $this->app['config']['admin_route'].'/content/infotownlinkwp');
+        $this->assertTrue($this->client->getResponse()->isSuccessful());
     }
 
     /**
-     * @group local
      * @test
      */
     public function プラグイン設定画面が表示されること()
     {
-//        $this->client->request('GET', $this->app['config']['admin_route'].'/plugin/InfoTownLinkWp/wordpress');
-//        $this->assertTrue($this->client->getResponse()->isSuccessful());
+        $this->client->request('GET', $this->app['config']['admin_route'].'/plugin/InfoTownLinkWp/wordpress');
+        $this->assertTrue($this->client->getResponse()->isSuccessful());
     }
 }
